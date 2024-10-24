@@ -4,12 +4,15 @@
 // 1. The "People in Space" API, which gives information about the people currently in outer space.
 // 2. The NASA Astronomy Picture of the Day (APOD) API, which provides a daily picture or video related to astronomy.
 
-async function fetchAstronauts(requestURL) {
-        
+async function fetchspacePeople(requestUrl){
+  let response = await fetch("http://open-notify.org/astros.json")
+  let data = await response.json()
+  console.log(data.people[7].name)
+  return data
 }
 
 // CALL your function here
-
+let requestUrl = "http://open-notify.org/astros.json"
 // TASK 1: Fetch Data from the "People in Space" API
 
 // 1. Find the "People in Space" API: http://open-notify.org/
